@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'homepage.dart';
 
 class Loginpage1 extends StatefulWidget {
-  Loginpage1({Key? key}) : super(key: key);
+  const Loginpage1({Key? key}) : super(key: key);
 
   @override
   State<Loginpage1> createState() => _LoginpageState();
@@ -41,8 +40,9 @@ class _LoginpageState extends State<Loginpage1> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: FlatButton(
-                    padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                    color:const Color.fromARGB(255, 141, 219, 247),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 40),
+                    color: const Color.fromARGB(255, 141, 219, 247),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -58,28 +58,29 @@ class _LoginpageState extends State<Loginpage1> {
                   ),
                 ),
               ),
-            const  SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-             const Text(
+              const Text(
                 "or",
                 style: TextStyle(
                   color: Color.fromARGB(255, 15, 15, 15),
                   fontSize: 35,
                 ),
               ),
-             const SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
                 height: 60,
                 decoration: BoxDecoration(
-                  color:const Color.fromARGB(255, 173, 152, 152).withOpacity(0.5),
+                  color:
+                      const Color.fromARGB(255, 173, 152, 152).withOpacity(0.5),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child:const Center(
+                child: const Center(
                   child: TextField(
-                    decoration:  InputDecoration(
+                    decoration: InputDecoration(
                       prefixIcon: Icon(Icons.phone),
                       border: InputBorder.none,
                       hintText: 'Your Mobile Number',

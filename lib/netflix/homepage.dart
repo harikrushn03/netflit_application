@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-
 import 'login.dart';
 
-
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -14,12 +12,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   List<String> images = [
     "https://m.apnlive.com/sortd-service/imaginary/v22-01/jpg/large/high?url=YXBuLW5ld3MtcHJvZC1zb3J0ZC9tZWRpYTgwNWM2ZGQwLWY5MjUtMTFlYy05YjA1LTU3MGQ0NDZjYjc2M2pwZw=="
-    "https://static2.showtimes.com/poster/660x980/the-prom-netflix-149579.jpg",
+        "https://static2.showtimes.com/poster/660x980/the-prom-netflix-149579.jpg",
     "https://images.immediate.co.uk/remote/m.media-amazon.com/images/M/MV5BY2E4MmNmMzgtOTI2YS00MzhjLTlmOWItZTkxNWRkYTY2NDcwXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_.jpg",
     "https://static1.showtimes.com/poster/660x980/project-power-netflix-146610.jpg",
     "https://pbs.twimg.com/media/FXuecPDVUAQ6nXe?format=jpg&name=900x900",
     "https://cdnb.artstation.com/p/assets/images/images/028/663/215/large/mateus-caetano-propaganda-final-english.jpg?1595144092",
-    
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         color: const Color(0xff212121),
         child: Row(
           children: [
-            _sheet(icon: Icons.search, text: "Search ", index: 0),
+            _sheet(icon: Icons.shop, text: "Plan ", index: 0),
             _sheet(icon: Icons.tv, text: "Tv", index: 1),
             _sheet(icon: Icons.home, text: "Netflix +", index: 2),
             _sheet(icon: Icons.movie_sharp, text: "Movies", index: 3),
@@ -149,8 +146,14 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Column(
                 children: const [
-                  Text("Privacy Policy   .  T&C"),
-                  Text("V12.4.2.1156"),
+                  Text("Privacy Policy   .  T&C",
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
+                  Text("V12.4.2.1156",
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
                 ],
               ),
             ],
@@ -160,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff212121),
-        centerTitle: true,
+        // centerTitle: true,
         title: const Text(
           "Netflix",
           style: TextStyle(
@@ -169,58 +172,7 @@ class _LoginPageState extends State<LoginPage> {
             fontWeight: FontWeight.w500,
           ),
         ),
-        actions: [
-          PopupMenuButton(
-            itemBuilder: (context) {
-              return [
-                PopupMenuItem(
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
-                      Text("Search"),
-                    ],
-                  ),
-                ),
-                PopupMenuItem(
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.video_call,
-                        color: Colors.black,
-                      ),
-                      Text("video Call"),
-                    ],
-                  ),
-                ),
-                PopupMenuItem(
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.clear,
-                        color: Colors.black,
-                      ),
-                      Text("Clear History"),
-                    ],
-                  ),
-                ),
-                PopupMenuItem(
-                  child: Row(
-                    children: const [
-                      Icon(
-                        Icons.delete,
-                        color: Colors.black,
-                      ),
-                      Text("Delete and Leave Group"),
-                    ],
-                  ),
-                ),
-              ];
-            },
-          ),
-        ],
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
       body: SingleChildScrollView(
         child: Column(
